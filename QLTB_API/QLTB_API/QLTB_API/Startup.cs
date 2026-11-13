@@ -207,20 +207,20 @@ namespace QLTB_API
             }
 
             // Phải chạy trước HTTPS, xác thực và nhật ký để RemoteIpAddress là IP thiết bị thật.
-            app.UseForwardedHeaders();
-            app.UseHttpsRedirection();
-            app.UseCors("CorsPolicy");
+           app.UseForwardedHeaders();
+
+// Không chuyển hướng HTTP sang HTTPS khi chạy local Development
+            if (!env.IsDevelopment())
+            {
+                app.UseHttpsRedirection();
+            }
+
             app.UseStaticFiles();
-            //app.UseDeveloperExceptionPage();
-            //app.UseFileServer(new FileServerOptions
-            //{
-            //    FileProvider = new PhysicalFileProvider(
-            //        Path.Combine(env.ContentRootPath, "Resources")),
-            //    RequestPath = "/Resources",
-            //    EnableDirectoryBrowsing = false
-            //});
+
             app.UseRouting();
-            
+
+            // CORS phải nằm sau UseRouting và trước Authentication
+            app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
 
