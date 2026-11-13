@@ -1,0 +1,599 @@
+/* Utils */
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.card {
+    background: var(--surface-card);
+    border: 1px solid var(--surface-border);
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+    border-radius: $borderRadius;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.p-toast {
+    &.p-toast-top-right,
+    &.p-toast-top-left,
+    &.p-toast-top-center {
+        top: 100px;
+    }
+}
+
+.reloading {
+    position: relative;
+}
+
+.reloading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 75%);
+    animation: skeletonLoading 1s infinite;
+}
+
+@keyframes skeletonLoading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+
+.bg-light-blue {
+    background-color: #dff0ff !important; /* Màu xanh nhạt */
+}
+
+.bg-light-red {
+    background-color: #ffa8a8 !important; /* Màu đỏ nhạt */
+}
+
+.custom-button {
+    background-color: #1445a7;
+    cursor: pointer;
+}
+
+.custom-button.disabled {
+    background-color: #ccc !important; /* Màu xám khi disabled */
+    cursor: not-allowed;
+    border: none;
+}
+
+.panel-padding {
+    padding: 0.8rem !important;
+}
+
+.panel-padding-small {
+    padding: 0.5rem !important;
+}
+
+//Cho dropdown:
+.p-dropdown-panel {
+    max-width: 90vw !important; /* Giới hạn chiều rộng tối đa là 90% viewport */
+    width: auto !important;      /* Cho phép tự động điều chỉnh */
+}
+
+// CSS cho pdf-viewer:
+.viewer-dialog {
+    width: 80%;
+}
+
+.viewer-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 600px;
+}
+
+.pdf-view {
+    flex: 7;
+    max-width: 70%;
+}
+.pdf-view-full {
+    flex: 12;
+    max-width: 100%;
+}
+
+
+.info-panel {
+    flex: 4;
+    max-width: 36%;
+    padding: 16px;
+}
+
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.info-item label {
+    width: 25%;
+    margin-right: 5px;
+}
+
+.info-item strong {
+    width: 75%;
+}
+
+.select-item {
+    width: 75%;
+}
+
+.pdf-viewer-container {
+    width: 100%;
+    height: 100%;
+    max-height: 600px; /* Giới hạn chiều cao trên desktop */
+    overflow: auto; /* Thêm scroll nếu nội dung quá lớn */
+}
+
+.pdf-viewer-container-qltn {
+    width: 100%;
+    height: 100%;
+    max-height: 750px; /* Giới hạn chiều cao trên desktop */
+    overflow: auto; /* Thêm scroll nếu nội dung quá lớn */
+}
+
+// Viewer biên bản kiểm kê dùng mẫu DOCX/PDF khổ ngang.
+.kiemke-landscape-viewer {
+    flex-wrap: nowrap;
+    gap: 16px;
+    min-height: 720px;
+}
+
+.kiemke-landscape-viewer .kiemke-landscape-pdf {
+    flex: 0 1 68%;
+    max-width: none;
+    min-width: 0;
+    min-height: 720px;
+}
+
+.kiemke-landscape-viewer .kiemke-info-panel {
+    flex: 0 1 32%;
+    width: auto;
+    min-width: 430px;
+    max-width: none;
+    overflow-y: auto;
+}
+
+.kiemke-landscape-viewer .info-item {
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.kiemke-landscape-viewer .info-item label {
+    flex: 0 0 42%;
+    width: auto;
+    margin-right: 0;
+}
+
+.kiemke-landscape-viewer .info-item > strong {
+    flex: 1 1 58%;
+    width: auto;
+    overflow-wrap: anywhere;
+}
+
+.opposite-content {
+    text-align: right;
+}
+
+.p-datatable thead th {
+    text-align: center !important;
+}
+
+.p-datatable thead th .p-column-header-content {
+    display: flex;
+    justify-content: center;
+}
+
+
+.selected-row {
+    background-color: #d1e7ff !important; /* Xanh nhạt */
+}
+
+.row-red {
+    background-color: rgba(255, 0, 0, 0.2) !important; /* Màu nền đỏ nhạt */
+}
+
+.row-green {
+    background-color: #AEDFF7 !important; /* Màu nền đỏ nhạt */
+}
+
+.row-warning {
+    background-color: 	#fff9c4 !important; /* Màu nền vàng nhạt */
+}
+
+.p-timeline-event-opposite {
+    flex: 0.5 1;
+}
+
+.dim-on-disable:disabled {
+    background-color: #5a5a5a !important;
+    border-color: #5a5a5a !important;
+    opacity: 0.5;
+    color: white;
+    cursor: not-allowed;
+}
+
+.current-page-style {
+    margin: 0 12px;
+}
+
+.p-panelmenu .p-panelmenu-header > a {
+    padding: 1rem !important;
+}
+
+.custom-dialog .p-dialog-content {
+  padding: 1rem;
+}
+
+.custom-dialog .p-dialog-footer {
+  justify-content: flex-end;
+}
+
+.custom-dialog .p-button {
+  margin-left: 1rem;
+}
+
+.custom-dialog .p-button-rounded {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.custom-dialog .p-button-rounded:hover {
+  background-color: #e0e0e0;
+}
+
+/*CSS cho double-line:*/
+.p-datatable td {
+  position: relative;
+}
+
+.double-line-cell {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.double-line-cell div {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.double-line-cell div:first-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.p-button-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//Dashboard:
+.module-box {
+  background: var(--surface-50);
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.module-divider {
+  height: 3px;
+  width: 48px;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+}
+
+
+//Image danhgiagdv:
+.img-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.img-wrapper img {
+    width: 60px;
+    height: 45px; /* 4:3 */
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.zoom-icon {
+    position: absolute;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 4px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.img-wrapper:hover .zoom-icon {
+    opacity: 1;
+}
+
+/* Cho label chiếm full chiều ngang */
+.p-panelmenu-header-link .p-menuitem-text,
+.p-menuitem-link .p-menuitem-text {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.menu-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-label-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.menu-label-badge {
+  background-color: #1445a7;
+  color: #fff;
+  border-radius: 999px;     /* bí quyết: nhỏ => tròn, lớn => bầu dục */
+  padding: 2px 6px;
+  min-width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.menu-label-warning {
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 999px;   
+  padding: 2px 6px;
+  min-width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+
+/* Responsive cho điện thoại */
+@media  screen and (max-width: 768px)
+{
+    .p-paginator {
+        padding: 0;
+    }
+    
+    .p-panel .p-panel-content {
+        padding: 0.75rem !important;
+    }
+
+    .p-dropdown-panel {
+        left: 50% !important;        
+        transform: translateX(-50%) !important;
+    }
+
+    .card {
+        padding: 0.5rem;
+    }
+
+    .pdf-viewer-container {
+        height: 500px; /* Giảm chiều cao trên điện thoại */
+        max-height: none;
+    }
+
+    .viewer-dialog {
+        width: 95% !important;
+    }
+    .viewer-container {
+        flex-direction: column;
+    }
+
+    .pdf-view, .info-panel {
+        height: 100vh;
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .info-panel {
+        padding: 8px;
+        font-size: 12px;
+        max-width: 100%;
+    }
+
+    .info-item label {
+        width: 28%;
+    }
+
+    .info-item strong {
+        width: 72%;
+    }
+
+    .select-item {
+        width: 72%;
+    }
+    
+    .p-timeline-event-content {
+        flex: 2;
+    }
+
+    .p-timeline.p-timeline-vertical .p-timeline-event-opposite {
+        padding: 0 0.5rem;
+    }
+
+    .p-timeline.p-timeline-vertical .p-timeline-event-content {
+        padding: 0 0.5rem;
+    }
+
+    .p-dialog .p-dialog-header {
+        padding: 0.75rem;
+    }
+    
+    .p-dialog .p-dialog-content {
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+
+/* Màn hình ngang điện thoại: */
+@media screen and (max-width: 850px) and (orientation: landscape) {
+    .viewer-dialog {
+        width: 95% !important;
+    }
+
+    .viewer-container {
+        flex-direction: row; /* Hiển thị theo hàng ngang */
+    }
+
+    .pdf-view {
+        max-width: 65%; /* Giảm bớt để vừa màn hình */
+    }
+    .info-panel {
+        padding: 8px;
+        max-width: 35%;
+        font-size: 12px;
+    }
+
+    .p-timeline-event-content {
+        flex: 2;
+    }
+
+    .p-timeline.p-timeline-vertical .p-timeline-event-opposite {
+        padding: 0 0.5rem;
+    }
+
+    .p-timeline.p-timeline-vertical .p-timeline-event-content {
+        padding: 0 0.5rem;
+    }
+
+    .p-dialog .p-dialog-header {
+        padding: 0.75rem;
+    }
+    
+    .p-dialog .p-dialog-content {
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .current-page-style {
+        margin: 0;
+    }
+    /* Nút chuyển trang */
+    .p-paginator .p-paginator-first,
+    .p-paginator .p-paginator-prev,
+    .p-paginator .p-paginator-next,
+    .p-paginator .p-paginator-last {
+      padding: 6px 4px !important;
+      font-size: 1rem !important;
+    }
+
+    .p-paginator .p-paginator-prev,
+    .p-paginator .p-paginator-next {
+        min-width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+  
+    /* Số trang */
+    .p-paginator .p-paginator-pages .p-paginator-page {
+      min-width: 2rem !important;
+      height: 2rem !important;
+      font-size: 1rem !important;
+      padding: 0 !important;
+    }
+  
+    /* Dropdown chọn số dòng/trang */
+    .p-paginator .p-dropdown {
+      min-width: 3rem !important;
+      height: 3rem !important;
+      font-size: 1rem !important;
+    }
+  
+    /* Input đi đến trang */
+    .p-paginator input.p-inputtext {
+      width: 3.5rem !important;
+      height: 3rem !important;
+      font-size: 1rem !important;
+      padding: 4px !important;
+    }
+  
+    /* Tăng khoảng cách giữa các phần */
+    .p-paginator {
+      gap: 0.5rem !important;
+      flex-wrap: wrap;
+    }
+  
+    /* Nhỏ chữ tổng trang */
+    .p-paginator-current {
+      font-size: 1rem !important;
+    }
+  }
+
+@media screen and (max-width: 850px) {
+    .kiemke-landscape-viewer {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .kiemke-landscape-viewer .kiemke-landscape-pdf {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 100%;
+        min-height: 500px;
+    }
+
+    .kiemke-landscape-viewer .kiemke-info-panel {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+  
+
+

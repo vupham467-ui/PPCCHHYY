@@ -1,0 +1,159 @@
+using APIPCHY.Helpers;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+
+namespace QLTB_API.Models.QUAN_TRI.HT_MENU
+{
+    public class HT_MENU_Manager
+    {
+        DataHelper helper = new DataHelper();
+
+        public List<HT_MENU_Model> get_All_HT_MENU()
+        {
+            try
+            {
+                DataTable tb = helper.ExcuteReader("PKG_QLTB_QUANTRI.get_All_HT_MENU");
+                List<HT_MENU_Model> listMenu = new List<HT_MENU_Model>();
+                if (tb != null)
+                {
+                    for (int i = 0; i < tb.Rows.Count; i++)
+                    {
+                        HT_MENU_Model model = new HT_MENU_Model();
+                        model.id = tb.Rows[i]["ID"] != DBNull.Value ? int.Parse(tb.Rows[i]["ID"].ToString()) : null;
+                        model.ten_menu = tb.Rows[i]["TEN_MENU"] != DBNull.Value ? tb.Rows[i]["TEN_MENU"].ToString() : null;
+                        model.ghi_chu = tb.Rows[i]["GHI_CHU"] != DBNull.Value ? tb.Rows[i]["GHI_CHU"].ToString() : null;
+                        model.ngay_tao = tb.Rows[i]["NGAY_TAO"] != DBNull.Value ? DateTime.Parse(tb.Rows[i]["NGAY_TAO"].ToString()) : null;
+                        model.nguoi_tao = tb.Rows[i]["NGUOI_TAO"] != DBNull.Value ? tb.Rows[i]["NGUOI_TAO"].ToString() : null;
+                        model.ngay_sua = tb.Rows[i]["NGAY_SUA"] != DBNull.Value ? DateTime.Parse(tb.Rows[i]["NGAY_SUA"].ToString()) : null;
+                        model.nguoi_sua = tb.Rows[i]["NGUOI_SUA"] != DBNull.Value ? tb.Rows[i]["NGUOI_SUA"].ToString() : null;
+                        model.duong_dan = tb.Rows[i]["DUONG_DAN"] != DBNull.Value ? tb.Rows[i]["DUONG_DAN"].ToString() : null;
+                        model.parent_id = tb.Rows[i]["PARENT_ID"] != DBNull.Value ? int.Parse(tb.Rows[i]["PARENT_ID"].ToString()) : null;
+                        model.icon = tb.Rows[i]["ICON"] != DBNull.Value ? tb.Rows[i]["ICON"].ToString() : null;
+                        model.sap_xep = tb.Rows[i]["SAP_XEP"] != DBNull.Value ? int.Parse(tb.Rows[i]["SAP_XEP"].ToString()) : null;
+                        model.ma_menu = tb.Rows[i]["ma_menu"] != DBNull.Value ? tb.Rows[i]["ma_menu"].ToString() : null;
+                        listMenu.Add(model);
+                    }
+                }
+
+                else listMenu = null;
+                return listMenu;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        // Phương thức tạo mới HT_MENU
+        public string create_HT_MENU(HT_MENU_Model model)
+        {
+            try
+            {
+                string result = helper.ExcuteNonQuery(
+                    "PKG_QLTB_QUANTRI.insert_HT_MENU",
+                    "p_Error",
+                    "p_ID", "p_TEN_MENU", "p_GHI_CHU", "p_NGAY_TAO", "p_NGUOI_TAO",
+                    "p_NGAY_SUA", "p_NGUOI_SUA", "p_DUONG_DAN", "p_PARENT_ID", "p_ICON", "p_SAP_XEP",
+                    model.id, model.ten_menu, model.ghi_chu, model.ngay_tao, model.nguoi_tao,
+                    model.ngay_sua, model.nguoi_sua, model.duong_dan, model.parent_id, model.icon, model.sap_xep
+                );
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string create_HT_MENU_v2(HT_MENU_Model model)
+        {
+            try
+            {
+                string result = helper.ExcuteNonQuery_v2(
+                    "PKG_QLTB_QUANTRI.insert_HT_MENU_v2",
+                    "p_Error",
+                    "p_TEN_MENU", "p_MA_MENU", "p_GHI_CHU", "p_NGAY_TAO", "p_NGUOI_TAO",
+                    "p_DUONG_DAN", "p_PARENT_ID", "p_ICON", "p_SAP_XEP",
+                    model.ten_menu, model.ma_menu, model.ghi_chu, model.ngay_tao, model.nguoi_tao,
+                    model.duong_dan, model.parent_id, model.icon, model.sap_xep
+                );
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // Phương thức cập nhật HT_MENU
+        public string update_HT_MENU(HT_MENU_Model model)
+        {
+            try
+            {
+                string result = helper.ExcuteNonQuery(
+                    "PKG_QLTB_QUANTRI.update_HT_MENU",
+                    "p_Error",
+                    "p_ID", "p_TEN_MENU", "p_GHI_CHU", "p_NGAY_TAO", "p_NGUOI_TAO",
+                    "p_NGAY_SUA", "p_NGUOI_SUA", "p_DUONG_DAN", "p_PARENT_ID", "p_ICON", "p_SAP_XEP",
+                    model.id, model.ten_menu, model.ghi_chu, model.ngay_tao, model.nguoi_tao,
+                    model.ngay_sua, model.nguoi_sua, model.duong_dan, model.parent_id, model.icon, model.sap_xep
+                );
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string update_HT_MENU_v2(HT_MENU_Model model)
+        {
+            try
+            {
+                // Log input
+                Console.WriteLine("Calling update_HT_MENU_v2 with parameters:");
+                Console.WriteLine($"ID={model.id}, TEN_MENU={model.ten_menu}, MA_MENU={model.ma_menu}, GHI_CHU={model.ghi_chu}");
+                Console.WriteLine($"NGAY_SUA={model.ngay_sua}, NGUOI_SUA={model.nguoi_sua}, DUONG_DAN={model.duong_dan}");
+                Console.WriteLine($"PARENT_ID={model.parent_id}, ICON={model.icon}, SAP_XEP={model.sap_xep}");
+
+                string result = helper.ExcuteNonQuery_v2(
+                    "PKG_QLTB_QUANTRI.update_HT_MENU_v2",
+                    "p_Error",
+                    "p_ID", "p_TEN_MENU", "p_MA_MENU", "p_GHI_CHU", 
+                    "p_NGAY_SUA", "p_NGUOI_SUA", "p_DUONG_DAN", "p_PARENT_ID", "p_ICON", "p_SAP_XEP",
+                    model.id, model.ten_menu, model.ma_menu, model.ghi_chu,
+                    model.ngay_sua, model.nguoi_sua, model.duong_dan, model.parent_id, model.icon, model.sap_xep
+                );
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // Phương thức xóa HT_MENU
+        public string delete_HT_MENU(int id)
+        {
+            try
+            {
+                string result = helper.ExcuteNonQuery("PKG_QLTB_QUANTRI.delete_HT_MENU", "p_Error", "p_ID", id);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+     
+    }
+   
+
+}

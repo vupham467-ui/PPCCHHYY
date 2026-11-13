@@ -1,0 +1,323 @@
+.p-column-filter-menu-button {
+    color: white !important;
+    font-size: 1.5rem !important;
+  }
+  .p-sortable-column-icon {
+    color: white !important;
+    font-size: 1.5rem !important
+  }
+
+.pmis-attribute-sync-progress .p-progressbar-value {
+  position: relative;
+  overflow: hidden;
+  background: #2196f3;
+}
+
+.pmis-attribute-sync-progress .p-progressbar-value.p-progressbar-value-animate {
+  transition: width 1s ease-in-out;
+}
+
+.pmis-attribute-sync-progress {
+  position: relative;
+  overflow: hidden;
+  background: #dbeafe;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pmis-attribute-sync-progress .p-progressbar-value.p-progressbar-value-animate {
+    transition: none;
+  }
+}
+
+/* Hộp thoại cập nhật trực tiếp PMIS. */
+.pmis-direct-toast.p-toast {
+  z-index: var(--pmis-direct-toast-z) !important;
+}
+
+.pmis-direct-session-card {
+  padding: 1.25rem;
+  border: 1px solid #dbeafe;
+  border-radius: 0.9rem;
+  background: linear-gradient(145deg, #f8fbff, #ffffff 70%);
+}
+
+.pmis-direct-session-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1.4rem;
+}
+
+.pmis-direct-session-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.6rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.75rem;
+  background: #e0edff;
+  color: #1d4ed8;
+  font-size: 1.1rem;
+}
+
+.pmis-direct-session-title {
+  color: #1e3a8a;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.pmis-direct-session-description {
+  margin-top: 0.35rem;
+  color: #475569;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.pmis-direct-password-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.pmis-direct-password-group {
+  display: flex;
+  width: 100%;
+}
+
+.pmis-direct-password-group .p-inputtext {
+  flex: 1 1 auto;
+  min-width: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.pmis-direct-password-group .p-button {
+  flex: 0 0 3rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.pmis-direct-session-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.15rem;
+}
+
+.pmis-direct-session-hint {
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.pmis-direct-session-button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.pmis-direct-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+.pmis-direct-loading-message {
+  color: #334155;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pmis-direct-loading-content small {
+  color: #64748b;
+}
+
+.pmis-direct-field-scroll {
+  max-height: 55vh;
+  padding: 0.15rem;
+  overflow: auto;
+}
+
+.pmis-direct-field-table {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1rem;
+}
+
+.pmis-direct-field-item {
+  min-width: 0;
+  padding: 0.85rem;
+  border: 1px solid #dbe3ef;
+  border-radius: 0.7rem;
+  background: #fff;
+}
+
+.pmis-direct-field-pending {
+  border-color: #fdba74;
+  background: #fffaf3;
+}
+
+.pmis-direct-field-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #334155;
+  font-weight: 700;
+}
+
+.pmis-direct-required-mark,
+.pmis-direct-field-error {
+  color: #b91c1c;
+}
+
+.pmis-direct-field-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  min-height: 1.4rem;
+  margin-top: 0.4rem;
+  color: #64748b;
+  font-size: 0.76rem;
+}
+
+.pmis-direct-pending-badge {
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: #ffedd5;
+  color: #9a3412;
+  font-weight: 600;
+}
+
+.pmis-direct-pmis-current {
+  display: block;
+  margin-top: 0.4rem;
+  color: #b45309;
+  line-height: 1.4;
+}
+
+.pmis-direct-input-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pmis-direct-field-error {
+  display: block;
+  margin-top: 0.35rem;
+  line-height: 1.35;
+}
+
+.pmis-direct-save-issue {
+  margin: 0.85rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid #fecaca;
+  border-radius: 0.7rem;
+  background: #fff7f7;
+  color: #991b1b;
+  line-height: 1.45;
+}
+
+.pmis-direct-save-issue ul {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.pmis-direct-required-button {
+  margin-top: 0.7rem;
+}
+
+.pmis-direct-action-bar {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pmis-direct-coordinate-card {
+  margin-top: 0.9rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.7rem;
+  background: #f8fbff;
+}
+
+.pmis-direct-coordinate-title {
+  margin-bottom: 0.55rem;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.pmis-direct-coordinate-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  color: #475569;
+  font-size: 0.86rem;
+}
+
+.pmis-direct-coordinate-check {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.7rem;
+}
+
+.pmis-direct-coordinate-check label {
+  color: #334155;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .pmis-direct-field-scroll {
+    max-height: 58vh;
+  }
+
+  .pmis-direct-field-table {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  .pmis-direct-action-bar,
+  .pmis-direct-action-bar .p-button,
+  .pmis-direct-required-button {
+    width: 100%;
+  }
+
+  .pmis-direct-session-card {
+    padding: 1rem;
+  }
+
+  .pmis-direct-session-header {
+    gap: 0.65rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .pmis-direct-session-icon {
+    flex-basis: 2.3rem;
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .pmis-direct-session-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .pmis-direct-session-button {
+    width: 100%;
+  }
+
+  .pmis-direct-coordinate-values {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}

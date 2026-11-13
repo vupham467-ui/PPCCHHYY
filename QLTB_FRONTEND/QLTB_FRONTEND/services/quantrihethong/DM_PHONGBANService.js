@@ -1,0 +1,46 @@
+import { apiClient } from "../../constants/api";
+import { storageHelper } from "../../utils/storageUtils";
+
+export const searchDM_PHONGBAN = async (data) => {
+  const res = await apiClient.post("/DM_PHONGBAN/search_DM_PHONGBAN", {
+    ...data,
+    ma_dviqly: storageHelper.get("current_MADVIQLY"),
+  });
+  return res.data;
+};
+
+export const searchDM_PHONGBAN_V2 = async (data) => {
+  const res = await apiClient.post("/DM_PHONGBAN/search_DM_PHONGBAN", {
+    ...data,
+  });
+  return res.data;
+};
+
+export const insertDM_PHONGBAN = async (data) => {
+  const res = await apiClient.post("/DM_PHONGBAN/insert_DM_PHONGBAN", data);
+  return res;
+};
+
+export const updateDM_PHONGBAN = async (data) => {
+  const res = await apiClient.put("/DM_PHONGBAN/update_DM_PHONGBAN", data);
+  return res;
+};
+
+export const deleteDM_PHONGBAN = async (id) => {
+  // console.log(id);
+  const res = await apiClient.delete(
+    "/DM_PHONGBAN/delete_DM_PHONGBAN?ID=" + id
+  );
+  return res;
+};
+export const getDM_PHONGBANById = async (id) => {
+  const res = await apiClient.get("/DM_PHONGBAN/get_DM_PHONGBANByID?ID=" + id);
+  return res.data;
+};
+
+export const getDM_PHONGBANByMA_DVIQLY = async (ma_dviqly) => {
+  const res = await apiClient.get(
+    "/DM_PHONGBAN/get_DM_PHONGBANByMA_DVI_QLY?ma_dviqly=" + ma_dviqly
+  );
+  return res?.data;
+};

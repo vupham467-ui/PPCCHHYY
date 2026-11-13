@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.2.0" />
+    <PackageReference Include="DS.Documents.Word" Version="7.1.4" />
+    <PackageReference Include="DS.Documents.Word.Layout" Version="7.1.4" />
+    <PackageReference Include="EPPlus" Version="7.5.1" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.19" />
+    <PackageReference Include="OpenXmlPowerTools" Version="4.5.3.2" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.90" />
+    <PackageReference Include="QRCoder" Version="1.5.0" />
+    <PackageReference Include="RestSharp" Version="106.13.0" />
+    <PackageReference Include="SkiaSharp" Version="3.116.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+	
+	<ItemGroup>
+		<Reference Include="itextsharp">
+			<HintPath>libs\itextsharp.dll</HintPath>
+		</Reference>
+		<Reference Include="log4net">
+			<HintPath>libs\log4net.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>libs\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="RestSharp">
+			<HintPath>libs\RestSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="SignService.Common.HashSignature">
+			<HintPath>libs\SignService.Common.HashSignature.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Security.Custom">
+			<HintPath>libs\System.Security.Custom.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+</Project>
